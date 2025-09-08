@@ -1,11 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lab1</title>
-</head>
-<body>
-  <!-- your code goes here -->
-</body>
+<html>
+  <head>
+    <!-- character encoding so text displays correctly -->
+    <meta charset="UTF-8" />
+    <!-- makes page responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- the title shown -->
+    <title>Lab 1 - Victoria</title>
+
+    <!-- internal CSS styles -->
+    <style>
+      /* global font and spacing 
+      bg and padding for header / footer
+      removes bullet points and space from nav list, displays items in row 
+      removes underline from nav links :D  
+      padding around main content
+      adds top and bottom margin for sections
+      reset margin for figs
+      style images: circle shape...
+      thin horizontal line style
+      padding for articles
+      removes default marginf or footer text */
+      body {font-family: system-ui, EB Garamond, serif; line-height: 1.6; margin: 0; }
+      header, footer { background: #f5f5f7; padding: 1rem 1.25rem; }
+      nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 1rem; }
+      nav a { text-decoration: none; }
+      main { padding: 1.25rem }
+      section { margin-block: 2rem; }
+      figure { margin: 0; }
+      img { max-width: 160px; height: auto; border-radius: 50%; }
+      hr { border: none; border-top: 1px solid #e3e3e3; }
+      article { padding-block: .5rem; }
+      footer p { margin: 0; } 
+    </style>
+  </head>
+
+  <body>
+    <!-- header: title + navigation -->
+    <header>
+      <!-- shows tooltip when hovered -->
+      <h1><abbr title = "Lab">Lab</abbr> 1 - Semantic HTML</h1>
+
+      <!-- navigation landmark -->
+      <nav aria-label="Primary">
+        <ul>
+          <!-- internal links jump to sections on this page -->
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+
+          <!-- an external link that opens in new tab to be extra -->
+          <li><a href="https://www.google.com" target="_blank" rel="noopener">Google</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- main primary page content -->
+    <main id="content">
+
+      <!-- about section -->
+      <section id="about" aria-labelledby="about-title">
+        <h2 id="about-title">About Me</h2>
+
+        <!-- figure: happy img with caption -->
+        <figure>
+          <img src="Happy.jpg"
+          alt="Happy just chilling" 
+          width="300"/>
+          <figcaption>... and my dog Happy</figcaption>
+        </figure>
+        <p>
+          Hello, I'm Victoria! I'm a Masters student at the University of California, Berkeley, focusing in Product Design.
+        </p>
+        <p>
+          I am originally from Vancouver, Canada, and am just exploring the world with my dog named Happy.
+        </p>
+
+        <!-- article: additional content inside section -->
+        <article aria-label="More about me">
+          <h3>My Hobbies</h3>
+          <ul>
+            <li>Gaming</li>
+            <li>Reading</li>
+            <li>Drawing</li>
+          </ul>
+          </article>
+      </section>
+
+      <!-- horizontal rule to separate secitions -->
+      <hr />
+
+      <!-- contact section -->
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact Me</h2>
+        <p>
+          Reach me by email: 
+          <a href="mailto:vi2jia@berkeley.edu">vi2jia@berkeley.edu</a>
+        </p>
+        <p>
+          Or find me on the web:
+          <a href="https://www.linkedin.com/in/bleppie/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </section>
+    </main>
+    
+    <!-- footer -->
+    <footer>
+      <!-- this <time> gives machine-readable data -->
+      <p>&copy; <time datetime="2025">2025</time> <span aria-label="visipstea">&lt;visipstea&gt;</span>. Built with semantic HTML.</p>
+    </footer>
+  </body>
 </html>
